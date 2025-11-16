@@ -2,6 +2,8 @@
 #include <cstddef>
 #include <utility>
 #include <stdexcept>
+#include <memory>
+
 #include "figure.hpp"
 
 namespace vector {
@@ -39,7 +41,7 @@ public:
 
 
 private:
-    std::unique_ptr<T[]> arr_;
+    std::shared_ptr<T[]> arr_;
     size_t sz_;
     size_t cap_;
 };
